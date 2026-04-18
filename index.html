@@ -356,6 +356,21 @@ html, body {
   background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(255,100,160,0.16),transparent);
   padding:24px;
 }
+#finale::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35); /* adjust darkness here */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+
+#finale.show::before {
+  opacity: 1;
+}  
 #finale.show { opacity:1; }
 #finale-big {
   font-family:'Fredoka One',sans-serif;
